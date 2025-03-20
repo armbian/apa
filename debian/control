@@ -138,6 +138,7 @@ Recommends:
  system-config-printer,
  upower
 Suggests:
+ polkitd|policykit-1|pkexec,
  apt-xapian-index,
  at-spi2-core,
  ayatana-indicator-printers,
@@ -196,8 +197,6 @@ Suggests:
  pamix,
  pasystray,
  pavucontrol,
- pavumeter,
- policykit-1,
  pulseaudio,
  pulseaudio-module-bluetooth,
  qalculate-gtk,
