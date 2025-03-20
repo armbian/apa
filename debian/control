@@ -63,3 +63,16 @@ Provides:
  armbian-desktop
 Breaks: armbian-desktop
 Conflicts: armbian-desktop
+
+#############################################################################
+
+Package: armbian-desktop-generic
+Description: Install generic Armbian DE
+Priority: optional
+Architecture: all
+Depends:
+ lightdm
+Provides:
+ armbian-desktop
+Breaks: armbian-desktop
+Conflicts: armbian-desktop
