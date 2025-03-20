@@ -26,6 +26,8 @@ Recommends:
  anacron,
  armbian-desktop,
  squid-deb-proxy-client
+Suggests:
+ docker.io|docker-ce|podman
 
 #############################################################################
 
@@ -59,7 +61,6 @@ Recommends:
  gdm3,
  gnome-control-center,
  gnome-desktop3-data,
- gnome-disk-utility,
  gnome-disk-utility,
  gnome-keyring,
  gnome-menus,
