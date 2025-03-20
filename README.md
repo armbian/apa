@@ -7,22 +7,22 @@ Armbian desktop packaging.
   - copy necessary configuration files and settings
   - include any additional scripts, themes, and optimizations.
 
-### Implement proprietary drivers
+- [ ] Implement proprietary drivers
 
 If possible, postinstall additional packages depending on variable set in /etc/armbian-image For example - add certain blobs for RK3588, Genio, ...
 
-### Automating Assembly
+- [ ] Automating Assembly
 
 Write action script to package desktop environment.
 
-### Automate Repository Generation
+- [ ] Automate Repository Generation
 
 Create a script to generate a local repository similar to https://github.com/armbian/armbian.github.io but here we can have desktop.armbian.com. Update the armbian-config script to fetch packages from the new repository.
 
-### Integrating with armbian-config
+- [ ] Integrating with armbian-config
 
 Add support for fetching desktop environments from the new repository.
 
-### Testing & Deployment
+- [ ] Testing & Deployment
 
 Use automatic testing facility that is a part of armbian-config repository.
