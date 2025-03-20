@@ -29,5 +29,6 @@ Add support for fetching desktop environments from the new repository.
 
 - [ ] Testing & Deployment
 
-  - Use automatic testing facility that is a part of armbian-config repository.
+  - Use automatic testing facility that is a part of armbian-config repository
+    - publish to PPA: https://github.com/marketplace/actions/publish-ppa-package
   - test debian/changelog for syntax
