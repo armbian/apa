@@ -1,7 +1,8 @@
-on: 
+on:
   push:
     paths:
       - 'debian/changelog'
+  workflow_dispatch: # allow manual triggering
 
 jobs:
   build-debs:
