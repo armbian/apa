@@ -40,7 +40,7 @@ Provides: armbian-bsp
 
 #############################################################################
 
-Package: armbian-gnome-desktop
+Package: armbian-desktop-gnome
 Description: Install Armbian GNOME DE
 Priority: optional
 Architecture: all
@@ -53,7 +53,7 @@ Conflicts: armbian-desktop
 
 #############################################################################
 
-Package: armbian-xfce-desktop
+Package: armbian-desktop-xfce
 Description: Install Armbian XFCE DE
 Priority: optional
 Architecture: all
