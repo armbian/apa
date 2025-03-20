@@ -20,6 +20,7 @@ Depends:
  linux-image,
  pastebinit
 Recommends:
+ anacron,
  armbian-desktop,
  squid-deb-proxy-client
 
@@ -45,6 +46,7 @@ Description: Install Armbian GNOME DE
 Priority: optional
 Architecture: all
 Depends:
+ armbian-desktop-common,
  ubuntu-gnome-desktop
 Provides:
  armbian-desktop
@@ -58,6 +60,7 @@ Description: Install Armbian XFCE DE
 Priority: optional
 Architecture: all
 Depends:
+ armbian-desktop-common,
  ubuntu-xfce-desktop
 Provides:
  armbian-desktop
@@ -71,8 +74,26 @@ Description: Install generic Armbian DE
 Priority: optional
 Architecture: all
 Depends:
+ armbian-desktop-common,
  lightdm
 Provides:
  armbian-desktop
 Breaks: armbian-desktop
 Conflicts: armbian-desktop
+
+#############################################################################
+
+Package: armbian-desktop-common
+Description: Install packages common to all Armbian Desktop installations
+Priority: optional
+Architecture: all
+Depends:
+ terminator|konsole|gnome-terminal|xterm|termonad,
+ xarchiver
+Recommends:
+ cups,
+ eject,
+ printer-driver-all,
+ profile-sync-daemon,
+ system-config-printer,
+ upower
