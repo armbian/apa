@@ -1,0 +1,69 @@
+Maintainer: Armbian Community <info@armbian.com>
+Section: metapackages
+Source: armbian-meta
+Priority: optional
+Standards-Version: 4.6.1
+Build-Depends: debhelper (>= 7.0.50~)
+
+#############################################################################
+
+Package: armbian-common
+Description: Packages that should be installed on all armbian installations
+ .
+ Packages in Depends create a minimal system that will boot, have network and
+ start an SSH daemon for access
+Priority: required
+Essential: yes
+Architecture: all
+Depends:
+ armbian-bsp,
+ linux-image,
+ pastebinit
+Recommends:
+ armbian-desktop,
+ squid-deb-proxy-client
+
+#############################################################################
+
+Package: armbian-armhf-common
+Description: packages specific to the 32 bit armhf platform
+Priority: required
+Essential: yes
+Architecture: armhf
+Depends:
+ kernel-armv7-6.7
+Conflicts:
+ kernel-generic
+Replaces:
+ kernel-generic
+Provides: armbian-bsp
+
+#############################################################################
+
+Package: armbian-gnome-desktop
+Description: Install Armbian GNOME DE
+Priority: optional
+Architecture: all
+Depends:
+ ubuntu-gnome-desktop
+Provides:
+ armbian-desktop
+Breaks:
+ armbian-gnome-desktop
+Conflicts:
+ armbian-gnome-desktop
+
+#############################################################################
+
+Package: armbian-xfce-desktop
+Description: Install Armbian XFCE DE
+Priority: optional
+Architecture: all
+Depends:
+ ubuntu-xfce-desktop
+Provides:
+ armbian-desktop
+Breaks:
+ armbian-gnome-desktop
+Conflicts:
+ armbian-gnome-desktop
