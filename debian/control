@@ -48,10 +48,8 @@ Depends:
  ubuntu-gnome-desktop
 Provides:
  armbian-desktop
-Breaks:
- armbian-gnome-desktop
-Conflicts:
- armbian-gnome-desktop
+Breaks: armbian-desktop
+Conflicts: armbian-desktop
 
 #############################################################################
 
@@ -63,7 +61,5 @@ Depends:
  ubuntu-xfce-desktop
 Provides:
  armbian-desktop
-Breaks:
- armbian-gnome-desktop
-Conflicts:
- armbian-gnome-desktop
+Breaks: armbian-desktop
+Conflicts: armbian-desktop
