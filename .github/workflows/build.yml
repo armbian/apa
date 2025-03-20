@@ -1,6 +1,8 @@
 name: build Armbian binary deb packages
 on:
   push:
+    branches:
+      - main
     paths:
       - 'debian/changelog'
   workflow_dispatch: # allow manual triggering
