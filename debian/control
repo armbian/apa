@@ -68,7 +68,8 @@ Breaks: armbian-desktop
 Conflicts: armbian-desktop
 Depends:
  armbian-desktop-common,
- xfce4,
+ xfce4
+Recommends:
  xfce4-notifyd,
  xfce4-power-manager,
  xfce4-screenshooter,
