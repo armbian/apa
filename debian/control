@@ -129,14 +129,14 @@ Depends:
  evince|thunderbird|trojita|sylpheed,
  terminator|konsole|gnome-terminal|xfce-terminal|xterm|termonad,
  xdg-user-dirs-gtk,
- xfonts-100dpi|xfonts-75dpi|xfonts-base|xfonts-scalable,
  ${misc:Depends}
 Recommends:
  eject,
  printer-driver-all,
  profile-sync-daemon,
  system-config-printer,
- upower
+ upower,
+ xfonts-scalable|xfonts-100dpi|xfonts-75dpi|xfonts-base
 Suggests:
  polkitd|policykit-1|pkexec,
  apt-xapian-index,
