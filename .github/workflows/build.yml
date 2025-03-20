@@ -1,3 +1,4 @@
+name: build Armbian binary deb packages
 on:
   push:
     paths:
