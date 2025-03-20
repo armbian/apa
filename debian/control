@@ -33,7 +33,7 @@ Architecture: armhf
 Depends:
  kernel-armv7-6.7
 Conflicts:
- kernel-generic
+ armbian-bsp
 Replaces:
  kernel-generic
 Provides: armbian-bsp
