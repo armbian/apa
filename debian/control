@@ -130,7 +130,7 @@ Recommends:
  printer-driver-all,
  profile-sync-daemon,
  system-config-printer,
- upower,
+ upower
 Suggests:
  apt-xapian-index,
  at-spi2-core,
@@ -225,6 +225,6 @@ Suggests:
  xsensors,
  xserver-xorg,
  xserver-xorg-video-fbdev,
- xwallpaper
+ xwallpaper,
  xwayland,
  zenity
