@@ -8,7 +8,8 @@ Build-Depends: debhelper (>= 7.0.50~)
 #############################################################################
 
 Package: armbian-common
-Description: Packages that should be installed on all armbian installations
+Description:
+ Packages that should be installed on all armbian installations
  .
  Packages in Depends create a minimal system that will boot, have network and
  start an SSH daemon for access
@@ -18,6 +19,8 @@ Architecture: all
 Depends:
  armbian-bsp,
  linux-image,
+ netplan|network-manager,
+ openssh-server,
  pastebinit
 Recommends:
  anacron,
@@ -59,13 +62,17 @@ Package: armbian-desktop-xfce
 Description: Install Armbian XFCE DE
 Priority: optional
 Architecture: all
-Depends:
- armbian-desktop-common,
- ubuntu-xfce-desktop
 Provides:
  armbian-desktop
 Breaks: armbian-desktop
 Conflicts: armbian-desktop
+Depends:
+ armbian-desktop-common,
+ xfce4,
+ xfce4-notifyd,
+ xfce4-power-manager,
+ xfce4-screenshooter,
+ xfce4-terminal
 
 #############################################################################
 
@@ -88,12 +95,102 @@ Description: Install packages common to all Armbian Desktop installations
 Priority: optional
 Architecture: all
 Depends:
- terminator|konsole|gnome-terminal|xterm|termonad,
- xarchiver
+ evince|thunderbird|trojita|sylpheed,
+ terminator|konsole|gnome-terminal|xfce-terminal|xterm|termonad,
+ xdg-user-dirs-gtk,
+ xfonts-100dpi|xfonts-75dpi|xfonts-base|xfonts-scalable
 Recommends:
- cups,
  eject,
  printer-driver-all,
  profile-sync-daemon,
  system-config-printer,
- upower
+ upower,
+Suggests:
+ apt-xapian-index,
+ ayatana-indicator-printers,
+ blueman,
+ bluez,
+ bluez-cups,
+ bluez-tools,
+ brltty,
+ brltty-x11,
+ cifs-utils,
+ colord,
+ cups,
+ cups-bsd,
+ cups-client,
+ cups-filters,
+ dbus-x11,
+ dmz-cursor-theme,
+ fontconfig,
+ fontconfig-config,
+ fonts-noto-cjk,
+ fonts-ubuntu,
+ fonts-ubuntu-console,
+ foomatic-db-compressed-ppds,
+ gdebi,
+ ghostscript-x,
+ gnome-disk-utility,
+ gnome-font-viewer,
+ gnome-screenshot,
+ gnome-system-monitor,
+ gstreamer1.0-packagekit,
+ gstreamer1.0-plugins-base-apps,
+ gstreamer1.0-pulseaudio,
+ gtk2-engines,
+ gtk2-engines-murrine,
+ gtk2-engines-pixbuf,
+ gvfs-backends,
+ hplip,
+ inputattach,
+ inxi,
+ keyutils,
+ laptop-detect,
+ libatk-adaptor,
+ lightdm,
+ lm-sensors,
+ lxtask,
+ mesa-utils,
+ mousepad,
+ mousetweaks,
+ numix-gtk-theme,
+ numix-icon-theme,
+ numix-icon-theme-circle,
+ openprinting-ppds,
+ orca,
+ p7zip-full,
+ pamix,
+ pasystray,
+ pavucontrol,
+ pavumeter,
+ policykit-1,
+ pulseaudio,
+ pulseaudio-module-bluetooth,
+ qalculate-gtk,
+ redshift,
+ slick-greeter,
+ smbclient,
+ software-properties-gtk,
+ spice-vdagent,
+ synaptic,
+ system-config-printer,
+ thunar-volman,
+ update-inetd,
+ update-manager,
+ viewnior,
+ x11-apps,
+ x11-utils,
+ x11-xserver-utils,
+ xapps-common,
+ xarchiver,
+ xauth,
+ xbacklight,
+ xcursor-themes,
+ xfonts-encodings,
+ xfonts-utils,
+ xorg-docs-core,
+ xserver-xorg,
+ xserver-xorg-video-fbdev,
+ xscreensaver,
+ xsensors,
+ xwallpaper
