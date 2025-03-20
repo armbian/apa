@@ -3,12 +3,16 @@ Taks list
 - [ ] Extract Existing Desktop Configurations
   - identify the installed desktop environment packages and configurations:
   - copy necessary configuration files and settings
-  - include any additional scripts, themes, and optimizations.
+  - include any additional scripts, themes, and optimizations
+  - transfer meta-data and functionality from current scripts
+    - [armbian-base-files](https://github.com/armbian/build/blob/main/lib/functions/artifacts/artifact-armbian-base-files.sh)
+    - [BSP packages](https://github.com/armbian/build/blob/main/lib/functions/artifacts/artifact-armbian-bsp-cli.sh)
 
 - [ ] Implement proprietary drivers
 
 Ideally, create new arch-dependendent packages to properly reflect and support the large number of different hardware
   - depending on variable set in /etc/armbian-image For example - add certain blobs for RK3588, Genio, ...
+    -> that is what the collection of armbian-bsp virtual packages do
 
 - [ ] Automating Assembly
 
