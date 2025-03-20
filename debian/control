@@ -48,13 +48,61 @@ Package: armbian-desktop-gnome
 Description: Install Armbian GNOME DE
 Priority: optional
 Architecture: all
-Depends:
- armbian-desktop-common,
- ubuntu-gnome-desktop
 Provides:
  armbian-desktop
 Breaks: armbian-desktop
 Conflicts: armbian-desktop
+Depends:
+ armbian-desktop-common,
+ ubuntu-gnome-desktop
+Recommends:
+ gdm3,
+ gnome-control-center,
+ gnome-desktop3-data,
+ gnome-disk-utility,
+ gnome-disk-utility,
+ gnome-keyring,
+ gnome-menus,
+ gnome-packagekit,
+ gnome-screenshot,
+ gnome-session,
+ gnome-shell,
+ gnome-shell-extension-appindicator,
+ gnome-system-monitor,
+ gnome-terminal,
+ gvfs-backends,
+ nautilus,
+ nautilus-extension-gnome-terminal
+Suggests:
+ apt-xapian-index,
+ at-spi2-core,
+ colord,
+ dbus-x11,
+ dconf-cli,
+ dmz-cursor-theme,
+ fonts-noto-cjk,
+ fonts-ubuntu,
+ fonts-ubuntu-console,
+ foomatic-db-compressed-ppds,
+ gdebi,
+ inputattach,
+ libnotify-bin,
+ lm-sensors,
+ pavucontrol,
+ pulseaudio,
+ pulseaudio-module-bluetooth,
+ software-properties-gtk,
+ synaptic,
+ x11-apps,
+ x11-session-utils,
+ x11-utils,
+ x11-xserver-utils,
+ xdg-user-dirs,
+ xdg-user-dirs-gtk,
+ xfonts-base,
+ xserver-xorg,
+ xwayland,
+ zenity
 
 #############################################################################
 
@@ -148,7 +196,6 @@ Suggests:
  keyutils,
  laptop-detect,
  libatk-adaptor,
- lightdm,
  lm-sensors,
  lxtask,
  mesa-utils,
