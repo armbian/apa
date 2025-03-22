@@ -1,4 +1,4 @@
-name: build Armbian binary deb packages
+name: Build and publish Armbian binary deb packages
 on:
   push:
     branches:
@@ -11,12 +11,34 @@ jobs:
   build-debs:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
-      - uses: jtdor/build-deb-action@v1
+      - name: Checkout the code
+        uses: actions/checkout@v4
+      - name: Set up build environment and artifacts directory
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y build-essential devscripts xz-utils apt-utils
+          mkdir debian/artifacts
+      - name: Build deb packages
+        uses: jtdor/build-deb-action@v1
         env:
           DEB_BUILD_OPTIONS: noautodbgsym
         with:
           buildpackage-opts: --build=binary --no-sign
+      - name: Create distribution index files
+        run: |
+          dpkg-scanpackages -m debian/artifacts /dev/null | tee \
+            >(gzip -9c > debian/artifacts/Packages.gz) \
+            >(xz -9 > debian/artifacts/Packages.xz)
+          apt-ftparchive release debian/artifacts > debian/artifacts/Release
+      - name: Prepare Github Pages
+        run: |
+          # echo "index.html" > debian/artifacts/CNAME # optional, in case of the use of a custom domain
+      - name: Publish Github pages repository
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./debian/artifacts
+          publish_branch: gh-pages
       - name: Log files in artifacts directory
         run: ls -la debian/artifacts
       - name: Upload .deb artifacts
