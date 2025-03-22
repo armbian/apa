@@ -19,7 +19,7 @@ Architecture: all
 Depends:
  armbian-bsp,
  linux-image,
- netplan|network-manager,
+ netplan.io|network-manager,
  openssh-server,
  pastebinit,
  ${misc:Depends}
