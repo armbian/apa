@@ -40,11 +40,9 @@ jobs:
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add data/.
-          git diff --cached --quiet || git commit -m "Update WEB indes files"
+          git diff --cached --quiet || git commit -m "Update published repository files"
           git push
-      - name: Log files in artifacts directory
-        run: find debian/artifacts artifacts
-      - name: "Run base-files update action"
+      - name: "publish repository to web server"
         uses: peter-evans/repository-dispatch@v3
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
