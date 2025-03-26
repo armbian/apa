@@ -1,0 +1,38 @@
+Origin: Armbian
+Label: Armbian Package Archive APA
+Suite: stable
+Codename: current
+Date: Wed, 26 Mar 2025 20:18:56 UTC
+Architectures: amd64 armhf
+Components: main
+Description: packages provided by Armbian
+MD5Sum:
+ c6db958bd4fc276f81e3e1245602e9fc 5337 main/binary-amd64/Packages
+ 445a8bcd90f558cdcaafb2f61c0be4ed 2052 main/binary-amd64/Packages.gz
+ e8d5aa50c256cacb8c15253891826221 145 main/binary-amd64/Release
+ c6db958bd4fc276f81e3e1245602e9fc 5337 main/binary-armhf/Packages
+ 445a8bcd90f558cdcaafb2f61c0be4ed 2052 main/binary-armhf/Packages.gz
+ 1fde1e1b5e0bc611dafc5f7cc46036aa 145 main/binary-armhf/Release
+ 34ea6fcba1f8d0187482973bb85c9c0b 1320 main/source/Sources
+ 490e489dcc8b6235ac32b83bd5c79a07 579 main/source/Sources.gz
+ 19d9dfb16877329a219070ffed4e7649 146 main/source/Release
+SHA1:
+ a4f190691c496c13c16bb49c4259f6e5e6efaca6 5337 main/binary-amd64/Packages
+ 3f8a67e63f9640928bbccdd63db8129bfb6532f2 2052 main/binary-amd64/Packages.gz
+ 347ee392f007c84ef274a92749e6b389d4e92e79 145 main/binary-amd64/Release
+ a4f190691c496c13c16bb49c4259f6e5e6efaca6 5337 main/binary-armhf/Packages
+ 3f8a67e63f9640928bbccdd63db8129bfb6532f2 2052 main/binary-armhf/Packages.gz
+ 36061b72b78e83e1552001883e2795d945b0922e 145 main/binary-armhf/Release
+ 452438ef7f5bd0d8940986d53564aa8e5c7e1c00 1320 main/source/Sources
+ 00aba49a858c6aadc4109884ac971938fa835cf0 579 main/source/Sources.gz
+ 610903b84b86f3fbd0c8bb84bcd5d6994ec6943e 146 main/source/Release
+SHA256:
+ 97315f9ca3ac866dbc1470f54587409583d94ffad24fab347486d742153e5cd9 5337 main/binary-amd64/Packages
+ fd76033bd60aa95258e19b1e97f670039415ef9ece244bec81c6df39e8a7a9f0 2052 main/binary-amd64/Packages.gz
+ f7769073728c4ef063b04b65d6c83592f31f96e764ab71cbc14ebbe056de9e32 145 main/binary-amd64/Release
+ 97315f9ca3ac866dbc1470f54587409583d94ffad24fab347486d742153e5cd9 5337 main/binary-armhf/Packages
+ fd76033bd60aa95258e19b1e97f670039415ef9ece244bec81c6df39e8a7a9f0 2052 main/binary-armhf/Packages.gz
+ 459205239c564e6e38dc3d9a9774884db634923dc1488c6a45210da2c9690e34 145 main/binary-armhf/Release
+ 6e86f6abb99c65cac0b3d94f106d7d774be06c2383b5a8d9f11c6f5ebfda9606 1320 main/source/Sources
+ 25de917edad1b380c7f2380dec973ba44ab10d83d06f0780b4d103358e272fcd 579 main/source/Sources.gz
+ 3f432a94f2a721dd39aa10c4e7818bb86a8d907447111b05e57f4060be3c6a68 146 main/source/Release
