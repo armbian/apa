@@ -4,5 +4,5 @@ Suite: stable
 Codename: current
 Architectures: amd64 armhf source
 Components: main
-Description: packages provided by Armbian
+Description: packages provided by the Armbian project
 SignWith: DF00FAF1C577104B50BF1D0093D6889F9F0E78D5
