@@ -25,6 +25,12 @@ jobs:
           DEB_BUILD_OPTIONS: noautodbgsym
         with:
           buildpackage-opts: --build=full --no-sign
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_KEY1 }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE1 }}
       - name: Create distribution repository
         run: |
           reprepro -b debian/artifacts includedsc stable debian/artifacts/*.dsc
@@ -34,7 +40,7 @@ jobs:
         run: |
           git checkout data
           mkdir -p data
-          mv ${{ github.workspace }}/debian/files data/
+          cp -rf ${{ github.workspace }}/debian/artifacts/{pool,dists} data/
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add data/.
