@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout the code
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Set up build environment and artifacts directory
         run: |
           sudo apt-get update
@@ -30,19 +32,34 @@ jobs:
             >(gzip -9c > debian/artifacts/Packages.gz) \
             >(xz -9 > debian/artifacts/Packages.xz)
           apt-ftparchive release debian/artifacts > debian/artifacts/Release
-      - name: Prepare Github Pages
+      - name: Commit changes if any
         run: |
+          git checkout data
+          mkdir -p data
+          mv ${{ github.workspace }}/debian/files data/
+          git config --global user.name "github-actions"
+          git config --global user.email "github-actions@github.com"
+          git add data/.
+          git diff --cached --quiet || git commit -m "Update WEB indes files"
+          git push
+#      - name: Prepare Github Pages
+#        run: |
           # echo "index.html" > debian/artifacts/CNAME # optional, in case of the use of a custom domain
-      - name: Publish Github pages repository
-        uses: peaceiris/actions-gh-pages@v4
+ #     - name: Publish Github pages repository
+  #      uses: peaceiris/actions-gh-pages@v4
+   #     with:
+    #      github_token: ${{ secrets.GITHUB_TOKEN }}
+     #     publish_dir: ./debian/artifacts
+      #    publish_branch: gh-pages
+#      - name: Log files in artifacts directory
+#        run: ls -la debian/artifacts
+ #     - name: Upload .deb artifacts
+  #      uses: actions/upload-artifact@v4
+   #     with:
+    #      name: deb-artifacts
+     #     path: debian/artifacts/*.deb
+      - name: "Run base-files update action"
+        uses: peter-evans/repository-dispatch@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./debian/artifacts
-          publish_branch: gh-pages
-      - name: Log files in artifacts directory
-        run: ls -la debian/artifacts
-      - name: Upload .deb artifacts
-        uses: actions/upload-artifact@v4
-        with:
-          name: deb-artifacts
-          path: debian/artifacts/*.deb
+          token: ${{ secrets.GITHUB_TOKEN }}
+          event-type: "Generate directory"
