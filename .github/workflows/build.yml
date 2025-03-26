@@ -42,22 +42,8 @@ jobs:
           git add data/.
           git diff --cached --quiet || git commit -m "Update WEB indes files"
           git push
-#      - name: Prepare Github Pages
-#        run: |
-          # echo "index.html" > debian/artifacts/CNAME # optional, in case of the use of a custom domain
- #     - name: Publish Github pages repository
-  #      uses: peaceiris/actions-gh-pages@v4
-   #     with:
-    #      github_token: ${{ secrets.GITHUB_TOKEN }}
-     #     publish_dir: ./debian/artifacts
-      #    publish_branch: gh-pages
-#      - name: Log files in artifacts directory
-#        run: ls -la debian/artifacts
- #     - name: Upload .deb artifacts
-  #      uses: actions/upload-artifact@v4
-   #     with:
-    #      name: deb-artifacts
-     #     path: debian/artifacts/*.deb
+      - name: Log files in artifacts directory
+        run: find debian/artifacts artifacts
       - name: "Run base-files update action"
         uses: peter-evans/repository-dispatch@v3
         with:
