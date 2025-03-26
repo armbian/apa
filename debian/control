@@ -17,7 +17,7 @@ Priority: required
 Essential: yes
 Architecture: all
 Depends:
- armbian-bsp,
+ armbian-bsp|armbian-bsp-cli,
  linux-image,
  netplan.io|network-manager,
  openssh-server,
