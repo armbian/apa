@@ -18,20 +18,18 @@ jobs:
       - name: Set up build environment and artifacts directory
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential devscripts xz-utils apt-utils
-          mkdir debian/artifacts
+          sudo apt-get install -y build-essential reprepro
       - name: Build deb packages
         uses: jtdor/build-deb-action@v1
         env:
           DEB_BUILD_OPTIONS: noautodbgsym
         with:
-          buildpackage-opts: --build=binary --no-sign
-      - name: Create distribution index files
+          buildpackage-opts: --build=full --no-sign
+      - name: Create distribution repository
         run: |
-          dpkg-scanpackages -m debian/artifacts /dev/null | tee \
-            >(gzip -9c > debian/artifacts/Packages.gz) \
-            >(xz -9 > debian/artifacts/Packages.xz)
-          apt-ftparchive release debian/artifacts > debian/artifacts/Release
+          reprepro -b debian/artifacts includedsc stable debian/artifacts/*.dsc
+          reprepro -b debian/artifacts includedeb stable debian/artifacts/*.deb
+          reprepro -b debian/artifacts export
       - name: Commit changes if any
         run: |
           git checkout data
