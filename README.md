@@ -6,7 +6,7 @@ Binary deb package repository for the Armbian distribution
 
 On a Debian-based system
 
-    sudo apt install devscripts
+    sudo apt install devscripts debhelper fakeroot
     git clone git@github.com:armbian/apa.git
     cd apa
     debuild -uc -us
