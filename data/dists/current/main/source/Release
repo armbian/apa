@@ -3,4 +3,4 @@ Component: main
 Origin: Armbian
 Label: Armbian Package Archive APA
 Architecture: source
-Description: packages provided by Armbian
+Description: packages provided by the Armbian project

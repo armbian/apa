@@ -1,20 +1,20 @@
 Package: armbian-common
 Source: armbian-meta
-Version: 250326.1
+Version: 250327.1
 Architecture: all
 Essential: yes
 Maintainer: Armbian Community <info@armbian.com>
-Installed-Size: 7
+Installed-Size: 16
 Depends: armbian-bsp | armbian-bsp-cli, linux-image, netplan.io | network-manager, openssh-server, pastebinit
 Recommends: anacron, armbian-desktop, squid-deb-proxy-client
 Suggests: docker.io | docker-ce | podman
 Priority: required
 Section: metapackages
-Filename: pool/main/a/armbian-meta/armbian-common_250326.1_all.deb
-Size: 1276
-SHA256: 577d5ee3c07ec64fbe9ae65bbacdbe9e1fe4a2702bc06991ef7e2ba246265ca8
-SHA1: d733298b5a78b9d72785bca270766ed12b25358d
-MD5sum: 3b6b97f97fb229ed836e4fd7e69f8f1d
+Filename: pool/main/a/armbian-meta/armbian-common_250327.1_all.deb
+Size: 3820
+SHA256: def2e1629ba3d843f562b80ed014d2f52dd3d193846d842dcb31942e077265a5
+SHA1: 1f0579bbb1efb20f40aba24d87e1ee42a32f95eb
+MD5sum: 9e60a6e4a8957c2c859471e59c995f68
 Description:
  Packages that should be installed on all armbian installations
  .
@@ -23,7 +23,7 @@ Description:
 
 Package: armbian-desktop-common
 Source: armbian-meta
-Version: 250326.1
+Version: 250327.1
 Architecture: all
 Maintainer: Armbian Community <info@armbian.com>
 Installed-Size: 7
@@ -32,38 +32,38 @@ Recommends: eject, printer-driver-all, profile-sync-daemon, system-config-printe
 Suggests: polkitd | policykit-1 | pkexec, apt-xapian-index, at-spi2-core, ayatana-indicator-printers, blueman, bluez, bluez-cups, bluez-tools, brltty, brltty-x11, cifs-utils, colord, cups, cups-bsd, cups-client, cups-filters, dbus-x11, dconf-cli, dmz-cursor-theme, fontconfig, fontconfig-config, fonts-noto-cjk, fonts-ubuntu, fonts-ubuntu-console, foomatic-db-compressed-ppds, gdebi, ghostscript-x, gnome-disk-utility, gnome-font-viewer, gnome-screenshot, gnome-system-monitor, gstreamer1.0-packagekit, gstreamer1.0-plugins-base-apps, gstreamer1.0-pulseaudio, gtk2-engines, gtk2-engines-murrine, gtk2-engines-pixbuf, gvfs-backends, hplip, inputattach, inxi, keyutils, laptop-detect, libatk-adaptor, libnotify-bin, lm-sensors, lxtask, mesa-utils, mousepad, mousetweaks, numix-gtk-theme, numix-icon-theme, numix-icon-theme-circle, openprinting-ppds, orca, p7zip-full, pamix, pasystray, pavucontrol, pulseaudio, pulseaudio-module-bluetooth, qalculate-gtk, redshift, slick-greeter, smbclient, software-properties-gtk, spice-vdagent, synaptic, thunar-volman, update-inetd, update-manager, viewnior, x11-apps, x11-session-utils, x11-utils, x11-xserver-utils, xapps-common, xarchiver, xauth, xbacklight, xcursor-themes, xfonts-base, xfonts-encodings, xfonts-utils, xorg-docs-core, xscreensaver, xsensors, xserver-xorg, xserver-xorg-video-fbdev, xwallpaper, xwayland, zenity
 Priority: optional
 Section: metapackages
-Filename: pool/main/a/armbian-meta/armbian-desktop-common_250326.1_all.deb
+Filename: pool/main/a/armbian-meta/armbian-desktop-common_250327.1_all.deb
 Size: 1896
-SHA256: 9046e1923f6c8c0ef4baf2175894a1af580d0f5d74c30ed3bca5d63ecf12c3cd
-SHA1: 213e110ccd9492235d74f3e7d79a6e69b9f2a852
-MD5sum: f869742c5268f01e3c78b34434e33560
+SHA256: 0cb533c8a5d13227468040a2022dc2cefd2c52aa0e4f9d51bc587d96077f3ed1
+SHA1: 5953075875fe733c2b8975873aee90e50644a7be
+MD5sum: 1f0bad1c9acf327a134f262d457e9263
 Description: Install packages common to all Armbian Desktop installations
 
 Package: armbian-desktop-generic
 Source: armbian-meta
-Version: 250326.1
+Version: 250327.1
 Architecture: all
 Maintainer: Armbian Community <info@armbian.com>
-Installed-Size: 7
+Installed-Size: 12
 Depends: armbian-desktop-common, lightdm
 Conflicts: armbian-desktop
 Breaks: armbian-desktop
 Provides: armbian-desktop
 Priority: optional
 Section: metapackages
-Filename: pool/main/a/armbian-meta/armbian-desktop-generic_250326.1_all.deb
-Size: 1100
-SHA256: 262e28be7d61b1da2f6a2ca38420b68373ca71850d7ff7553d9140ab5256596d
-SHA1: c5771ddd28326b813af2688bf048f74057a63f8d
-MD5sum: 1e850a3eaac3ad44a0859887b8a88dac
+Filename: pool/main/a/armbian-meta/armbian-desktop-generic_250327.1_all.deb
+Size: 1276
+SHA256: 5c32f35d5a70878b04687bc50268e32c1b7c0649bca37e62233ebbb19d57dc73
+SHA1: 6b6e4124bcdbff615150ea2498c9d62e4175258d
+MD5sum: 0d1606983fcefbb533f9be37bca962e8
 Description: Install generic Armbian DE
 
 Package: armbian-desktop-gnome
 Source: armbian-meta
-Version: 250326.1
+Version: 250327.1
 Architecture: all
 Maintainer: Armbian Community <info@armbian.com>
-Installed-Size: 7
+Installed-Size: 11
 Depends: armbian-desktop-common, ubuntu-gnome-desktop
 Recommends: gdm3, gnome-control-center, gnome-desktop3-data, gnome-disk-utility, gnome-keyring, gnome-menus, gnome-packagekit, gnome-screenshot, gnome-session, gnome-shell, gnome-shell-extension-appindicator, gnome-system-monitor, gnome-terminal, gvfs-backends, nautilus, nautilus-extension-gnome-terminal, xwayland
 Suggests: pavucontrol, pulseaudio, pulseaudio-module-bluetooth, software-properties-gtk, synaptic
@@ -72,16 +72,36 @@ Breaks: armbian-desktop
 Provides: armbian-desktop
 Priority: optional
 Section: metapackages
-Filename: pool/main/a/armbian-meta/armbian-desktop-gnome_250326.1_all.deb
-Size: 1304
-SHA256: c5caba7d087becb868ab3c0041a320aa500b6b459a626b7558d9ef9e4bf40186
-SHA1: 090232ba015bfacb023644ca1a4b089d6195dd43
-MD5sum: 248ebf05c35788275397a5ffba492d02
+Filename: pool/main/a/armbian-meta/armbian-desktop-gnome_250327.1_all.deb
+Size: 1436
+SHA256: aa8f195d030ad5ee65feb59d3afd8067912d8b2726969934b78ef0f0847795e3
+SHA1: b3804b236a77aa46ef041173f532ee3575dbd650
+MD5sum: 551516bb0fe7a9e9af35aa758d87a039
 Description: Install Armbian GNOME DE
+
+Package: armbian-desktop-kde
+Source: armbian-meta
+Version: 250327.1
+Architecture: all
+Maintainer: Armbian Community <info@armbian.com>
+Installed-Size: 11
+Depends: armbian-desktop-common
+Recommends: thunar
+Conflicts: armbian-desktop
+Breaks: armbian-desktop
+Provides: armbian-desktop
+Priority: optional
+Section: metapackages
+Filename: pool/main/a/armbian-meta/armbian-desktop-kde_250327.1_all.deb
+Size: 1228
+SHA256: 0faac344662240123b61b3f4e934c95fa973b285485aafb2805100f3edb98c45
+SHA1: f817e0f3bb07c11beafa9f4ff5aec746f5893fff
+MD5sum: e4c41b039d425c6c2a5cf71b2a276e68
+Description: Install Armbian KDE DE
 
 Package: armbian-desktop-xfce
 Source: armbian-meta
-Version: 250326.1
+Version: 250327.1
 Architecture: all
 Maintainer: Armbian Community <info@armbian.com>
 Installed-Size: 7
@@ -92,10 +112,10 @@ Breaks: armbian-desktop
 Provides: armbian-desktop
 Priority: optional
 Section: metapackages
-Filename: pool/main/a/armbian-meta/armbian-desktop-xfce_250326.1_all.deb
+Filename: pool/main/a/armbian-meta/armbian-desktop-xfce_250327.1_all.deb
 Size: 1140
-SHA256: 7c37f76ffbfb93e52502b704ee1abc32ac0b06569e864b530bc8acccd4fe110c
-SHA1: 1bc175be82f098d9c0a5385377771ba3b6b0b3fd
-MD5sum: d9afe7c7be53a8cfc71a07bccfb48b68
+SHA256: 4bf1e2f948e5562dd02a6d47bba7bfdf7b3f3f70432baa372770399b84b923bc
+SHA1: 9985aaa0ace55a38937cca62c57439c39656735c
+MD5sum: 57709c3d7caa1e694a6d8710d70624e0
 Description: Install Armbian XFCE DE
 
