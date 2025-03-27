@@ -5,7 +5,7 @@ Origin: Armbian
 Label: Armbian Package Archive APA
 Suite: stable
 Codename: current
-Date: Thu, 27 Mar 2025 02:48:56 UTC
+Date: Thu, 27 Mar 2025 12:53:44 UTC
 Architectures: amd64 armhf
 Components: main
 Description: packages provided by the Armbian project
@@ -16,8 +16,8 @@ MD5Sum:
  7764befe4d6b9304a4ee20bc09bb575c 5944 main/binary-armhf/Packages
  b28a873dc537628a0f1513ad505269ed 2191 main/binary-armhf/Packages.gz
  4371a5716840c1579244168d92f948a8 157 main/binary-armhf/Release
- dad96a44cdfd36bf7c3c326a39f76ed8 1397 main/source/Sources
- 38396b4c0147ed40376765346ef37823 590 main/source/Sources.gz
+ 29cbfca085ed610e61d426fc78303751 1397 main/source/Sources
+ 074677e04b5aa6a6f0e0e925d1581a84 588 main/source/Sources.gz
  5c9bfef5c793998357cbdeb354afbb87 158 main/source/Release
 SHA1:
  e74a83aa6d91a790179fbb55d4531b721644c05a 5944 main/binary-amd64/Packages
@@ -26,8 +26,8 @@ SHA1:
  e74a83aa6d91a790179fbb55d4531b721644c05a 5944 main/binary-armhf/Packages
  e283b6fbbe9cac8c92cde3dd822d870d188aa711 2191 main/binary-armhf/Packages.gz
  480156582aa6349667568cc6030015363816237a 157 main/binary-armhf/Release
- d2ddbe1799d9da9b9f0e75563eb38c287aeddc54 1397 main/source/Sources
- 508bf69f3815d16f10889801aada9ad9e5f44527 590 main/source/Sources.gz
+ 7de1510b77225af61d8f21de3d7d6ef1c7468ab3 1397 main/source/Sources
+ f4b03ce9cedd1342d3c565eedc7380574a1c1206 588 main/source/Sources.gz
  e094b080e1d2883b67da74f9299576a73f6e57cf 158 main/source/Release
 SHA256:
  ab71cb2a9e8d80ac35573b8570789fb03124ce63f3e9909f24fdb1be542fcac9 5944 main/binary-amd64/Packages
@@ -36,22 +36,22 @@ SHA256:
  ab71cb2a9e8d80ac35573b8570789fb03124ce63f3e9909f24fdb1be542fcac9 5944 main/binary-armhf/Packages
  5137ccd196711736b84671301c846f50ff7788efc5387c723ff00e15780974dd 2191 main/binary-armhf/Packages.gz
  60254130d7a2189cc851560b8ec9f5b617bec74fef1ac1d4f2ac67d32f02ee23 157 main/binary-armhf/Release
- d872bbf830837bd8068b6ea703d0aa39f78e24608b1bc2d36b7f7bf8fa3b6f0e 1397 main/source/Sources
- 1965914a5ac5d8c2554e07edeadcaaae761404cd58da090e87f27cfcb26111e8 590 main/source/Sources.gz
+ d83fd6e3ee949cea9187105eee502c7e7dd9c6f64a1f2bbc83ef8c029cda3698 1397 main/source/Sources
+ 291ed9f113d30c2b0f48cbace0bbc3f580469c1723d91c42de2e51b5d775465f 588 main/source/Sources.gz
  ab7fedcd9f0a21d91a464388020a46e82816d2a70db84a432a21a339f1b3647f 158 main/source/Release
 -----BEGIN PGP SIGNATURE-----
 
-iQIzBAEBCgAdFiEE3wD68cV3EEtQvx0Ak9aIn58OeNUFAmfkvJkACgkQk9aIn58O
-eNW6NQ//VfawGqhY9kaD0U3NwUNoAMn+/2jhI/UfkdHpFMAvCf2QJsVpViDRHI1A
-0jMUA4/VV5bYRhlbFmw/PxavZHpyeOiJDi9HGBPSOIU3Bic55IWlBA0nFOZjTaG8
-IqzRd5G2gb7CQjMX+okyh0CNs2kri6qxSNQ8bvhV7vjriwXWJEUUjtSaZWrBrijL
-rTLSuMR8WzHA9l6w96DekHhagn9qIZUMA5vNaud0eA8am/SDoXEzm0RZJBEg55SL
-boU3AMBwiYDcaQdnna+HJ0ce7I+XE63MaCr6YMG7rzQXTsA2odFbBqJpQ+oR6h/y
-ytXZx5518mVOAZi3y+N2DtM2hFZ/rxv9VuKxR0Ro0XmChsO4b/NmWs+Pj2bPXxmX
-Tnu7q521p/gurTfEA/i9UT1SgFpdtDDyM1UqqTlu4tpx2lv0a4z2nHiIo4FCjzIr
-fiJlhk80MLlrzmmD9S5moPZFgqyonfcunMLjMhQq69cwvJ1x7iOw02/5tZWgZzLb
-NUFYolLe/nZDQALbqw++2JoBkRN4mDGcU8GfxvMQ/hTDsd/YlvGVKaBp/u4avRgm
-+9TBZjoFyIS7kBCuVK/DFZppcGn6GVI5YbB+ycv6jHuB9Rs/qfXLVjM2zljTv/Wk
-YBrk+h6xUAyexhEeaxK1bZavmdVVMhFKKLL5SzeP//Z7ml5en+4=
-=r12X
+iQIzBAEBCgAdFiEE3wD68cV3EEtQvx0Ak9aIn58OeNUFAmflSlkACgkQk9aIn58O
+eNWTAQ//WnvUjmgxTwjtOhJ00CU9/E93n1M6/kPsdyGxdeXVdc/f7/yaoebhhQEp
+dXq58lCvPfFngR99iXYBXsHGI8o/f6JAGBBzT0dic88gLgVm1NCaxXaDqs/yI1Gy
+xGPk+VINEf73L0U46wdxL5vB7DSMp16llgouHCUIhIL5YzGbUcXpID33IsJcwzlf
+5/mj0VLTlzjJcieARpxAm3LVXlATeTiko0nBC2SNMqWyLDBV4Yi6P9COpTtaTzIp
+2+C5s4fS73YpTB0GS03wZIRL5ERglzyj8JDacbdDMhmtuEC8oMZHQO+sAp2wTVyt
+thM8WzbvXUTNIH8Sh5JfmBN78WQR9UrN8GtU3gdYq1p9OSDYG1X98TpNPEvxkZ3C
+qjwv4wD5zQDQbKdeBbz95Q7tKwiXA39Nm34aZxVVvxyVUJZ77VQx6kGQTpbjx6vR
+iVCvV9jcFMWApbQ4gan/jprn0iKERPEGwqgoZLrMWFN7tA3zkoZoASRAy+CIDUDE
+XKg97nD2mUkX40QaOqxFC/ob/pHnprkBrMerFTaFOK5GO7kLVxuB0cPF3bJKnd2O
+GTUArDNUgrkfhPTGYZnAmN7Tc9xiAAIrXiSPCrszreF6HFnEWWatIexukkI/HV0l
+NNN9I+9xYcuC9JbMDGon6A2FOKW3U5m2Zx0J+ZNirHaBJ40W1H8=
+=F6/s
 -----END PGP SIGNATURE-----
