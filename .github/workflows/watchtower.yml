@@ -1,0 +1,25 @@
+name: Periodically check stuff for changes
+
+on:
+  schedule:
+    - cron: "33 3 12 * *"
+  workflow_dispatch:
+
+jobs:
+  check-hashes:
+    runs-on: ubuntu-latest
+    steps:
+      - name: compare hashes to stored values
+        env:
+          FILES: |-
+            https://apt.armbian.com/armbian.key=45eea660732932370088652b214b85acb426c022529284211d76c12dcb5c9ec3
+        run: |
+          # for each line in FILES multi-line string, split into $URI and $HASH using
+          # parameter expansion and array expansion. then dl, checksum and compare.
+          readarray -t lines <<< "$FILES"
+          for line in "${lines[@]}"; do
+            URI=${line%%=*}
+            HASH=${line#*=}
+            wget -qO- "$URI" | sha256sum | grep "$HASH" || exit 1
+            echo verified $URI with hash $HASH successfully
+          done
