@@ -1,0 +1,5 @@
+Types: deb
+URIs: http://github.armbian.com/apa
+Suites:  current
+Components: main
+Signed-By: /usr/share/keyrings/armbian-archive-keyring.gpg
