@@ -1,0 +1,21 @@
+name: Periodically check stuff for changes
+
+on:
+  schedule:
+    - cron: "33 3 12 * *"
+  workflow_dispatch:
+
+jobs:
+  check-hash:
+    runs-on: actions/runner-image:latest
+    steps:
+      - name: compare hashes to stored values
+        env:
+          SHA256_DICT: |
+            https://apt.armbian.com/armbian.key: 45eea660732932370088652b214b85acb426c022529284211d76c12dcb5c9ec3
+        run: |
+          # for each line in SHA256_DICT, split into $URI and $HASH, dl, checksum and compare
+          for LINE in "$SHA256_DICT";do
+            read -r URI HASH <<< $(awk -F ': ' '{print $1" "$2}' <<< $LINE)
+            wget -qO- $URI | sha256sum | grep $HASH || exit 1
+          end
