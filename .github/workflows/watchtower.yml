@@ -2,7 +2,7 @@ name: Periodically check stuff for changes
 
 on:
   schedule:
-    - cron: "33 3 12 * *"
+    - cron: "*/5 * * * *"
   workflow_dispatch:
 
 jobs:
