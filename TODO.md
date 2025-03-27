@@ -18,17 +18,16 @@ Ideally, create new arch-dependendent packages to properly reflect and support t
 
 Write action script to package desktop environment.
 
-- [ ] Automate Repository Generation
+- [x] Automate Repository Generation
 
-  - Create a script to generate a local repository similar to https://github.com/armbian/armbian.github.io but here we can have apt.armbian.com or deb.armbian.com or archive.armbian.com. 
-  - Update the armbian-config script to fetch packages from the new repository.
+  - ~~Create a script to generate a local repository similar to https://github.com/armbian/armbian.github.io but here we can have apt.armbian.com or deb.armbian.com or archive.armbian.com.~~
 
 - [ ] Integrating with armbian-config
 
-Add support for fetching desktop environments from the new repository.
+  - Add support for fetching desktop environments from the new repository.
+  - Update the armbian-config script to fetch packages from the new repository.
 
 - [ ] Testing & Deployment
 
   - Use automatic testing facility that is a part of armbian-config repository
-    - publish to PPA: https://github.com/marketplace/actions/publish-ppa-package
   - test debian/changelog for syntax
