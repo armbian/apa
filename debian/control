@@ -27,7 +27,7 @@ Recommends:
  anacron,
  armbian-desktop,
  avahi-browse,
- squid-deb-proxy-client
+ squid-deb-proxy-client|auto-apt-proxy
 Suggests:
  docker.io|docker-ce|podman
 
