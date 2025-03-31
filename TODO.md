@@ -1,6 +1,7 @@
 Taks list
 
 - [ ] Extract Existing Desktop Configurations
+  - much of this information is encoded in https://github.com/armbian/build/tree/main/config/desktop
   - identify the installed desktop environment packages and configurations:
   - copy necessary configuration files and settings
   - include any additional scripts, themes, and optimizations
