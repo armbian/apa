@@ -15,8 +15,8 @@ Package-List:
  armbian-desktop-kde deb metapackages optional arch=all
  armbian-desktop-xfce deb metapackages optional arch=all
 Checksums-Sha1:
- a12c30c76d1b5edcba489eb9b503bcb76e3f42ec 832299 armbian-meta_250327.1.tar.gz
+ 8b0b9929371c19a5d69cf71649f591032ead7b9d 1290175 armbian-meta_250327.1.tar.gz
 Checksums-Sha256:
- bb3ec2fdcee7b7f16d7f195eb9d8128e3732927150db06bfa29b387ea0de4ae7 832299 armbian-meta_250327.1.tar.gz
+ cfe26234bc8ebb3028086d2b30973e2b03538590b7f08646bba3b4bb30022c8c 1290175 armbian-meta_250327.1.tar.gz
 Files:
- 152f4d12cbd0b4926e23bfa4e34c18c2 832299 armbian-meta_250327.1.tar.gz
+ d2a9cb3467f04cee6b9ccec1a416e29c 1290175 armbian-meta_250327.1.tar.gz
