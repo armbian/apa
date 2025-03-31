@@ -1,4 +1,4 @@
-name: Build and publish Armbian binary deb packages
+name: Build / publish APA
 on:
   push:
     branches:
@@ -9,7 +9,17 @@ on:
 
 jobs:
   build-debs:
-    runs-on: ubuntu-armhf-latest
+    runs-on: ${{ matrix.runner }}
+    strategy:
+      matrix:
+        architecture:
+          - all
+          - armhf
+        include:
+          - architecture: all
+            runner: ubuntu-latest
+          - architecture: armhf
+            runner: ubuntu-armhf-latest
     steps:
       - name: Checkout the code
         uses: actions/checkout@v4
@@ -24,7 +34,8 @@ jobs:
         env:
           DEB_BUILD_OPTIONS: noautodbgsym
         with:
-          buildpackage-opts: --build=full --no-sign
+          host-arch: ${{ matrix.architecture == 'all' && 'amd64' || matrix.architecture }}
+          buildpackage-opts: --build=full
       - name: Import GPG key
         id: import_gpg
         uses: crazy-max/ghaction-import-gpg@v6
