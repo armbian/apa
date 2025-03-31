@@ -18,7 +18,7 @@ jobs:
       - name: Set up build environment and artifacts directory
         run: |
           sudo apt-get update
-          sudo apt-get install -y build-essential reprepro
+          sudo apt-get install -y dpkg-dev debhelper reprepro
       - name: Build deb packages
         uses: jtdor/build-deb-action@v1
         env:
