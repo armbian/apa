@@ -1,22 +1,3 @@
-Package: armbian-armhf-common
-Source: armbian-meta
-Version: 250327.1
-Architecture: armhf
-Essential: yes
-Maintainer: Armbian Community <info@armbian.com>
-Installed-Size: 7
-Conflicts: armbian-bsp
-Replaces: kernel-generic
-Provides: armbian-bsp
-Priority: required
-Section: metapackages
-Filename: pool/main/a/armbian-meta/armbian-armhf-common_250327.1_armhf.deb
-Size: 1116
-SHA256: 265097c6c71d0b559aa544dcddef6ea33a7d78da5368c2406d4ec4e515bffcfa
-SHA1: 194ab826c48aa64399692ad1b7475934a788fc11
-MD5sum: f45a6414c11c91439f603a21f13ea3e0
-Description: packages specific to the 32 bit armhf platform
-
 Package: armbian-common
 Source: armbian-meta
 Version: 250327.1
