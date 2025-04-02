@@ -6,15 +6,15 @@ Essential: yes
 Maintainer: Armbian Community <info@armbian.com>
 Installed-Size: 16
 Depends: armbian-bsp | armbian-bsp-cli, linux-image, netplan.io | network-manager, openssh-server, pastebinit
-Recommends: anacron, armbian-desktop, avahi-browser, squid-deb-proxy-client
+Recommends: anacron, armbian-desktop, avahi-browse, squid-deb-proxy-client | auto-apt-proxy
 Suggests: docker.io | docker-ce | podman
 Priority: required
 Section: metapackages
 Filename: pool/main/a/armbian-meta/armbian-common_250327.1_all.deb
-Size: 3828
-SHA256: 08254680730d399893c46bb30806195944ba994d019e312cb8a9cf2611a47797
-SHA1: 666e9902ab453e0c6e5ac93a02cba1f1d63b36fd
-MD5sum: 7e9ef1330b0a85678b9f0802fcbc5efa
+Size: 3836
+SHA256: 1018711100bc9b1cda069cf0a6ceca2e62acb92f63b962e1e04e4bc94b06aec3
+SHA1: b8b1379584fed80fa4092f0f17f2f2bcbc7d9839
+MD5sum: 639b5735257bd3b38ce47928bce587f5
 Description:
  Packages that should be installed on all armbian installations
  .
