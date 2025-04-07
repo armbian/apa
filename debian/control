@@ -138,6 +138,24 @@ Package: armbian-desktop-common
 Description: Install packages common to all Armbian Desktop installations
 Priority: optional
 Architecture: all
+Conflicts:
+ armbian-bookworm-desktop-cinnamon,
+ armbian-bookworm-desktop-gnome,
+ armbian-bookworm-desktop-i3-wm,
+ armbian-bookworm-desktop-xfce,
+ armbian-noble-desktop-cinnamon,
+ armbian-noble-desktop-gnome,
+ armbian-noble-desktop-kde-neon,
+ armbian-noble-desktop-xfce
+Replaces:
+ armbian-bookworm-desktop-cinnamon,
+ armbian-bookworm-desktop-gnome,
+ armbian-bookworm-desktop-i3-wm,
+ armbian-bookworm-desktop-xfce,
+ armbian-noble-desktop-cinnamon,
+ armbian-noble-desktop-gnome,
+ armbian-noble-desktop-kde-neon,
+ armbian-noble-desktop-xfce
 Depends:
  evince|thunderbird|trojita|sylpheed,
  terminator|konsole|gnome-terminal|xfce-terminal|xterm|termonad,
