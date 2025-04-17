@@ -29,7 +29,7 @@ jobs:
       - name: Checkout the code
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 1
       - name: Set up build environment and artifacts directory
         run: |
           sudo apt-get update
@@ -53,6 +53,28 @@ jobs:
           reprepro -b debian/artifacts includedsc stable debian/artifacts/*.dsc
           reprepro -b debian/artifacts includedeb stable debian/artifacts/*.deb
           reprepro -b debian/artifacts export
+      - name: "Upload artifacts"
+        uses: actions/upload-artifact@v4
+        with:
+          name: artifacts-${{ matrix.architecture }}
+          path: debian/artifacts/
+          if-no-files-found: ignore
+
+  merge:
+    name: "Merge artifacts"
+    needs: build-debs
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - name: Download All Artifacts
+        uses: actions/download-artifact@v4
+        with:
+          path: debian/artifacts/
+          pattern: artifacts-*
+          merge-multiple: true
       - name: Commit changes if any
         run: |
           git checkout data
