@@ -77,14 +77,15 @@ jobs:
           merge-multiple: true
       - name: Commit changes if any
         run: |
-          git checkout data
+          git checkout --orphan data
+          git rm -rf --cached .
           mkdir -p data
           cp -rf ${{ github.workspace }}/debian/artifacts/{pool,dists} data/
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
           git add data/.
-          git diff --cached --quiet || git commit -m "Update published repository files"
-          git push
+          git diff --cached --quiet || git commit --allow-empty -m "Update published repository files"
+          git push --force --set-upstream origin data
       - name: "publish repository to web server"
         uses: peter-evans/repository-dispatch@v3
         with:
