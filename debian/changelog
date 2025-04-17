@@ -1,5 +1,5 @@
-armbian-meta (250327.1) generic; urgency=low
+armbian-meta (250418.1) generic; urgency=low
 
-  * latest release
+  * latest beta release
 
- -- Rolf Leggewie <foss@leggewie.org>  Thu, 27 Mar 2025 10:40:24 +0800
+ -- Rolf Leggewie <foss@leggewie.org>  Thu, 17 Apr 2025 21:02:33 +0200
