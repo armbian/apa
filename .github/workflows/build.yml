@@ -13,9 +13,6 @@ jobs:
     name: ${{ matrix.architecture }}
     strategy:
       matrix:
-        architecture:
-          - all
-          - armhf
         include:
           - architecture: all
             runner: ubuntu-latest
