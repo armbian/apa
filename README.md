@@ -13,6 +13,8 @@ On a Debian-based system
 
 ## How to use on your SBC ##
 
+    wget -qO - https://apt.armbian.com/armbian.key | gpg --dearmor | \
+    sudo tee /usr/share/keyrings/armbian.gpg > /dev/null
     sudo tee /etc/apt/sources.list.d/armbian-apa.sources > /dev/null <<- 'EOT'
     Types: deb
     URIs: https://github.armbian.com/apa
@@ -20,6 +22,8 @@ On a Debian-based system
     Components: main
     Signed-By: /usr/share/keyrings/armbian.gpg
     EOT
+    sudo apt update
+    sudo apt install armbian-common
 
 ## Philosophy ##
 
