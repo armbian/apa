@@ -1,0 +1,4 @@
+#!/bin/sh
+
+# Disable the repository added via README.md instructions by renaming the file if present
+mv -f /etc/apt/sources.list.d/armbian-apa.list /etc/apt/sources.list.d/armbian-apa.list.inactive 2>/dev/null || true
