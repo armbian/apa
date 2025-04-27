@@ -25,11 +25,11 @@ Depends:
  ${misc:Depends}
 Recommends:
  anacron,
- armbian-desktop,
  avahi-browse,
  polkitd|policykit-1|pkexec,
  squid-deb-proxy-client|auto-apt-proxy
 Suggests:
+ armbian-desktop,
  docker.io|docker-ce|podman
 
 #############################################################################
