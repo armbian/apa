@@ -33,18 +33,13 @@ Suggests:
 
 #############################################################################
 
-Package: armbian-armhf-common
-Description: packages specific to the 32 bit armhf platform
+Package: armbian-bsp
+Description: board-specific hardware support
 Priority: required
 Essential: yes
-Architecture: armhf
+Architecture: any
 Depends:
  ${misc:Depends}
-Conflicts:
- armbian-bsp
-Replaces:
- kernel-generic
-Provides: armbian-bsp
 
 #############################################################################
 
