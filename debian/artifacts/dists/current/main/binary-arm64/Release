@@ -1,0 +1,6 @@
+Archive: stable
+Component: main
+Origin: Armbian
+Label: Armbian Package Archive APA
+Architecture: arm64
+Description: packages provided by the Armbian project
