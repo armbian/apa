@@ -14,8 +14,6 @@ jobs:
     strategy:
       matrix:
         include:
-          - architecture: all
-            runner: ubuntu-latest
           - architecture: armhf
             runner: ubuntu-24.04-arm
           - architecture: arm64
@@ -27,29 +25,18 @@ jobs:
         uses: actions/checkout@v4
         with:
           fetch-depth: 1
-      - name: Set up build environment and artifacts directory
+      - name: Set up build environment
         run: |
           sudo apt-get update
-          sudo apt-get install -y dpkg-dev debhelper reprepro
-      - name: Build deb packages
+          sudo apt-get install -y dpkg-dev debhelper
+      - name: Build deb and source packages
         uses: jtdor/build-deb-action@v1
         env:
           DEB_BUILD_OPTIONS: noautodbgsym
         with:
-          host-arch: ${{ matrix.architecture == 'all' && 'amd64' || matrix.architecture }}
-          buildpackage-opts: --build=full
+          host-arch: ${{ matrix.architecture }}
+          buildpackage-opts: --build=${{ matrix.architecture == 'riscv64' && 'full' || 'any' }}
           docker-image: debian:testing-20250407
-      - name: Import GPG key
-        id: import_gpg
-        uses: crazy-max/ghaction-import-gpg@v6
-        with:
-          gpg_private_key: ${{ secrets.GPG_KEY1 }}
-          passphrase: ${{ secrets.GPG_PASSPHRASE1 }}
-      - name: Create distribution repository
-        run: |
-          reprepro -b debian/artifacts includedsc stable debian/artifacts/*.dsc
-          reprepro -b debian/artifacts includedeb stable debian/artifacts/*.deb
-          reprepro -b debian/artifacts export
       - name: "Upload artifacts"
         uses: actions/upload-artifact@v4
         with:
@@ -58,7 +45,7 @@ jobs:
           if-no-files-found: ignore
 
   merge:
-    name: "Merge artifacts"
+    name: "Merge artifacts and publish"
     needs: build-debs
     runs-on: ubuntu-latest
     steps:
@@ -72,15 +59,25 @@ jobs:
           path: debian/artifacts/
           pattern: artifacts-*
           merge-multiple: true
-      - name: Commit changes if any
+      - name: Set up build environment
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y reprepro
+      - name: Import GPG key
+        id: import_gpg
+        uses: crazy-max/ghaction-import-gpg@v6
+        with:
+          gpg_private_key: ${{ secrets.GPG_KEY1 }}
+          passphrase: ${{ secrets.GPG_PASSPHRASE1 }}
+      - name: Create distribution repository and commit to data branch
         run: |
           git checkout --orphan data
           git rm -rf --cached .
-          mkdir -p data
-          cp -rf ${{ github.workspace }}/debian/artifacts/{pool,dists} data/
           git config --global user.name "github-actions"
           git config --global user.email "github-actions@github.com"
-          git add data/.
+          for file in debian/artifacts/*.changes; do reprepro -b debian/artifacts include current $file;done
+          reprepro -b debian/artifacts export
+          git add debian/artifacts/{pool,dists}
           git diff --cached --quiet || git commit --allow-empty -m "Update published repository files"
           git push --force --set-upstream origin data
       - name: "publish repository to web server"
