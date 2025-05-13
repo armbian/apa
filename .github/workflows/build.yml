@@ -14,6 +14,8 @@ jobs:
     strategy:
       matrix:
         include:
+          - architecture: amd64
+            runner: ubuntu-latest
           - architecture: armhf
             runner: ubuntu-24.04-arm
           - architecture: arm64
@@ -35,7 +37,7 @@ jobs:
           DEB_BUILD_OPTIONS: noautodbgsym
         with:
           host-arch: ${{ matrix.architecture }}
-          buildpackage-opts: --build=${{ matrix.architecture == 'riscv64' && 'full' || 'any' }}
+          buildpackage-opts: --build=${{ matrix.architecture == 'amd64' && 'full' || 'any' }}
           docker-image: debian:testing-20250407
       - name: "Upload artifacts"
         uses: actions/upload-artifact@v4
