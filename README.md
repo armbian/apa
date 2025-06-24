@@ -2,6 +2,10 @@
 
 Binary deb package [repository](https://github.armbian.com/apa/) for the Armbian distribution
 
+Purpose: This is not a comprehensive build-system like Launchpad or OBS for the general public to publish
+software. Armbian is about hardware enablement for SBC. APA is about making that easier for Armbian most
+and foremost by collecting and publishing information of how software needs to work together.
+
 ## How to build locally ##
 
 On a Debian-based system
