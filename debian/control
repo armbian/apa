@@ -34,6 +34,23 @@ Suggests:
 
 #############################################################################
 
+Package: armbian-ti-common
+Description:
+ Packages that should be installed for all SBC from Texas Instruments.
+Priority: required
+Essential: yes
+Architecture: all
+Depends:
+ armbian-common,
+ ${misc:Depends}
+Recommends:
+ cc33xx-fw,
+ cc33xx-target-scripts,
+ cc33conf,
+ cc33calibrator
+
+#############################################################################
+
 Package: armbian-bsp
 Description: board-specific hardware support
 Priority: required

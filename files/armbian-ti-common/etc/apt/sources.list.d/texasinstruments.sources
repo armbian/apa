@@ -1,0 +1,5 @@
+Types: deb deb-src
+URIs: http://TexasInstruments.github.io/ti-debpkgs/
+Suites: bookworm
+Components: main contrib non-free
+Signed-By: /usr/share/keyrings/texasinstruments-keyring.gpg
