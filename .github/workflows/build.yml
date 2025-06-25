@@ -47,9 +47,6 @@ jobs:
           if-no-files-found: ignore
 
   merge:
-    env:
-      PRIMARY_KEY: ${{ secrets.GPG_KEY3 }}
-      SECONDARY_KEY: ${{ secrets.GPG_KEY4 }}
     name: "Merge artifacts and publish"
     needs: build-debs
     runs-on: ubuntu-latest
@@ -70,26 +67,14 @@ jobs:
           sudo apt-get install -y reprepro
       - name: Import PRIMARY GPG key
         id: import_gpg_primary
-        if: env.PRIMARY_KEY != ''
         uses: crazy-max/ghaction-import-gpg@v6
         with:
-          gpg_private_key: ${{ env.PRIMARY_KEY }}
+          gpg_private_key: ${{ secrets.GPG_KEY3 }}
       - name: Import SECONDARY GPG key
         id: import_gpg_secondary
-        if: env.SECONDARY_KEY != ''
         uses: crazy-max/ghaction-import-gpg@v6
         with:
-          gpg_private_key: ${{ env.SECONDARY_KEY }}
-      - name: Generate GPG_PARAMETERS array
-        id: build_gpg_parameters
-        env:
-          FPR_PRIMARY: ${{ steps.import_gpg_primary.outputs.fingerprint }}
-          FPR_SECONDARY: ${{ steps.import_gpg_secondary.outputs.fingerprint }}
-        run: |
-          GPG_PARAMETERS="--yes --armor"
-          [ -n "$FPR_PRIMARY" ] && GPG_PARAMETERS+=" -u $FPR_PRIMARY"
-          [ -n "$FPR_SECONDARY" ] && GPG_PARAMETERS+=" -u $FPR_SECONDARY"
-          echo "GPG_PARAMETERS=$GPG_PARAMETERS" >> "$GITHUB_ENV"
+          gpg_private_key: ${{ secrets.GPG_KEY4 }}
       - name: Create distribution repository and commit to data branch
         run: |
           git checkout --orphan data
@@ -98,13 +83,6 @@ jobs:
           git config --global user.email "github-actions@github.com"
           for file in debian/artifacts/*.changes; do reprepro -b debian/artifacts include current $file;done
           reprepro -b debian/artifacts export
-          echo "Sign repo with multiple keys"
-          find "debian/artifacts/dists" -type f -name Release | while read -r release_file; do
-            distro_path="$(dirname "$release_file")"
-            echo "Signing release at: $distro_path"
-            gpg ${{ env.GPG_PARAMETERS }} --clear-sign -o "$distro_path/InRelease" "$release_file"
-            gpg ${{ env.GPG_PARAMETERS }} --detach-sign -o "$distro_path/Release.gpg" "$release_file"
-          done
           git add debian/artifacts/{pool,dists}
           git diff --cached --quiet || git commit --allow-empty -m "Update published repository files"
           git push --force --set-upstream origin data
