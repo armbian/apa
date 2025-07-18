@@ -1,12 +1,25 @@
-# Armbian Package Archive (APA)
+<h2 align="center">
+  <img src="https://raw.githubusercontent.com/armbian/.github/master/profile/logo.png" alt="Armbian logo" width="25%">
+  <br><br>
+</h2>
 
-Binary deb package [repository](https://github.armbian.com/apa/) for the Armbian distribution
+### Purpose of This Repository ###
 
-Purpose: This is not a comprehensive build-system like Launchpad or OBS for the general public to publish
-software. Armbian is about hardware enablement for SBC. APA is about making that easier for Armbian most
-and foremost by collecting and publishing information of how software needs to work together.
+This repository serves as the **Armbian Package Archive (APA)** — a binary `.deb` package repository tailored specifically for the Armbian distribution.
 
-## How to build locally ##
+Unlike general-purpose build systems such as Launchpad or Open Build Service (OBS), this repository is **not intended as a universal publishing platform**. Instead, it focuses on **hardware enablement and system integration for single board computers (SBCs)** supported by Armbian.
+
+The primary goal of APA is to:
+
+- **Simplify software packaging and distribution** for Armbian users and developers
+- **Collect, standardize, and publish** packages that require specific integration or coordination with Armbian’s kernel, bootloader, or base system
+- Ensure that **packages work correctly together** in the Armbian ecosystem
+
+Packages are published at: [https://github.armbian.com/apa/](https://github.armbian.com/apa/)
+
+This repository contains metadata, package configurations, and publishing logic to support automated and consistent package delivery to Armbian-based systems.
+
+### How to build locally ###
 
 On a Debian-based system
 
@@ -15,13 +28,13 @@ On a Debian-based system
     cd apa
     debuild -uc -us
 
-## How to use on your SBC ##
+### How to use on your SBC ###
 
     echo deb [trusted=yes] https://github.armbian.com/apa current main | sudo tee /etc/apt/sources.list.d/armbian-apa.list
     sudo apt update
     sudo apt install armbian-common
 
-## Philosophy ##
+### Philosophy ###
 
 This repository defines and provides a number of (virtual) armbian-* packages.  For example, there are a
 few armbian-desktop-* packages to aid in getting different desktop environments safely installed and
