@@ -12,7 +12,7 @@ jobs:
       - name: compare hashes to stored values
         env:
           FILES: |-
-            https://apt.armbian.com/armbian.key=45eea660732932370088652b214b85acb426c022529284211d76c12dcb5c9ec3
+            https://apt.armbian.com/armbian.key=c86db754ae38d13aa254e59672d8bb6c0ed9a0eeee9b5440cde69afef995da7a
         run: |
           # for each line in FILES multi-line string, split into $URI and $HASH using
           # parameter expansion and array expansion. then dl, checksum and compare.
