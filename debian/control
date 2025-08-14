@@ -54,7 +54,6 @@ Breaks: armbian-desktop
 Conflicts: armbian-desktop
 Depends:
  armbian-desktop-common,
- ubuntu-gnome-desktop,
  ${misc:Depends}
 Recommends:
  gdm3,
@@ -73,6 +72,7 @@ Recommends:
  gvfs-backends,
  nautilus,
  nautilus-extension-gnome-terminal,
+ ubuntu-desktop-minimal,
  xwayland
 Suggests:
  pavucontrol,
@@ -165,7 +165,6 @@ Recommends:
  upower,
  xfonts-scalable|xfonts-100dpi|xfonts-75dpi|xfonts-base
 Suggests:
- apt-xapian-index,
  at-spi2-core,
  ayatana-indicator-printers,
  blueman,
