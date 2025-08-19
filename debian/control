@@ -27,6 +27,7 @@ Recommends:
  anacron,
  avahi-browse,
  polkitd|policykit-1|pkexec,
+ pciutils,
  squid-deb-proxy-client|auto-apt-proxy
 Suggests:
  armbian-desktop,
