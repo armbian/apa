@@ -26,6 +26,7 @@ Depends:
 Recommends:
  anacron,
  avahi-browse,
+ gpg,
  polkitd|policykit-1|pkexec,
  pciutils,
  squid-deb-proxy-client|auto-apt-proxy
