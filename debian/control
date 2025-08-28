@@ -161,6 +161,7 @@ Depends:
  ${misc:Depends}
 Recommends:
  eject,
+ google-chrome-stable|chromium-browser,
  printer-driver-all,
  profile-sync-daemon,
  system-config-printer,
