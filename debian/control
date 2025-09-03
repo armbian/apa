@@ -19,6 +19,7 @@ Architecture: all
 Depends:
  armbian-bsp|armbian-bsp-cli,
  linux-image,
+ nano|vim,
  netplan.io|network-manager,
  openssh-server,
  pastebinit,
