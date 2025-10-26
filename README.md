@@ -30,7 +30,7 @@ On a Debian-based system
 
 ### How to use on your SBC ###
 
-    echo deb [trusted=yes] https://github.armbian.com/apa current main | sudo tee /etc/apt/sources.list.d/armbian-apa.list
+    echo "deb [trusted=yes] https://github.armbian.com/apa current main" | sudo tee /etc/apt/sources.list.d/armbian-apa.list
     sudo apt update
     sudo apt install armbian-common
 
