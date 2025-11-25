@@ -1,0 +1,140 @@
+Package: armbian-bsp
+Source: armbian-meta
+Version: 251126.4
+Architecture: arm64
+Essential: yes
+Maintainer: Armbian Community <info@armbian.com>
+Installed-Size: 7
+Priority: required
+Section: metapackages
+Filename: pool/main/a/armbian-meta/armbian-bsp_251126.4_arm64.deb
+Size: 1072
+SHA256: d5e116c2fa68a67c009c427c5f92e7a93f349d275b8baf06665615d9244764cb
+SHA1: 8530a637d85eaa33203267a66a5f9e6ed19f9c51
+MD5sum: c624355c03516ccd7101b4b4155a6985
+Description: board-specific hardware support
+
+Package: armbian-common
+Source: armbian-meta
+Version: 251126.4
+Architecture: all
+Essential: yes
+Maintainer: Armbian Community <info@armbian.com>
+Installed-Size: 24
+Depends: armbian-bsp | armbian-bsp-cli, linux-image, nano | vim, netplan.io | network-manager, openssh-server, pastebinit
+Recommends: anacron, avahi-browse, fastfetch | neofetch, gpg, polkitd | policykit-1 | pkexec, pciutils, squid-deb-proxy-client | auto-apt-proxy
+Suggests: armbian-desktop, docker.io | docker-ce | podman
+Priority: required
+Section: metapackages
+Filename: pool/main/a/armbian-meta/armbian-common_251126.4_all.deb
+Size: 9088
+SHA256: bc0ac02efb84fe492cc7c82de0a4c5b0e39107cee8097ca0657158dcb79f68e6
+SHA1: 1a4a96f940c33751ab76319732df62caac606607
+MD5sum: 0c4f2d146b0d4949e9c117b3af965f55
+Description:
+ Packages that should be installed on all armbian installations
+ .
+ Packages in Depends create a minimal system that will boot, have network and
+ start an SSH daemon for access
+
+Package: armbian-desktop-common
+Source: armbian-meta
+Version: 251126.4
+Architecture: all
+Maintainer: Armbian Community <info@armbian.com>
+Installed-Size: 7
+Depends: evince | thunderbird | trojita | sylpheed, terminator | konsole | gnome-terminal | xfce-terminal | xterm | termonad, xdg-user-dirs-gtk
+Recommends: eject, google-chrome-stable | chromium-browser, printer-driver-all, profile-sync-daemon, system-config-printer, upower, xfonts-scalable | xfonts-100dpi | xfonts-75dpi | xfonts-base
+Suggests: at-spi2-core, ayatana-indicator-printers, blueman, bluez, bluez-cups, bluez-tools, brltty, brltty-x11, cifs-utils, colord, cups, cups-bsd, cups-client, cups-filters, dbus-x11, dconf-cli, dmz-cursor-theme, fontconfig, fontconfig-config, fonts-noto-cjk, fonts-ubuntu, fonts-ubuntu-console, foomatic-db-compressed-ppds, gdebi, ghostscript-x, gnome-disk-utility, gnome-font-viewer, gnome-screenshot, gnome-system-monitor, gstreamer1.0-packagekit, gstreamer1.0-plugins-base-apps, gstreamer1.0-pulseaudio, gtk2-engines, gtk2-engines-murrine, gtk2-engines-pixbuf, gvfs-backends, hplip, inputattach, inxi, keyutils, laptop-detect, libatk-adaptor, libnotify-bin, lm-sensors, lxtask, mesa-utils, mousepad, mousetweaks, numix-gtk-theme, numix-icon-theme, numix-icon-theme-circle, openprinting-ppds, orca, p7zip-full, pamix, pasystray, pavucontrol, pulseaudio, pulseaudio-module-bluetooth, qalculate-gtk, redshift, slick-greeter, smbclient, software-properties-gtk, spice-vdagent, synaptic, thunar-volman, update-inetd, update-manager, viewnior, x11-apps, x11-session-utils, x11-utils, x11-xserver-utils, xapps-common, xarchiver, xauth, xbacklight, xcursor-themes, xfonts-base, xfonts-encodings, xfonts-utils, xorg-docs-core, xscreensaver, xsensors, xserver-xorg, xserver-xorg-video-fbdev, xwallpaper, xwayland, zenity
+Conflicts: armbian-bookworm-desktop-cinnamon, armbian-bookworm-desktop-gnome, armbian-bookworm-desktop-i3-wm, armbian-bookworm-desktop-xfce, armbian-noble-desktop-cinnamon, armbian-noble-desktop-gnome, armbian-noble-desktop-kde-neon, armbian-noble-desktop-xfce
+Replaces: armbian-bookworm-desktop-cinnamon, armbian-bookworm-desktop-gnome, armbian-bookworm-desktop-i3-wm, armbian-bookworm-desktop-xfce, armbian-noble-desktop-cinnamon, armbian-noble-desktop-gnome, armbian-noble-desktop-kde-neon, armbian-noble-desktop-xfce
+Priority: optional
+Section: metapackages
+Filename: pool/main/a/armbian-meta/armbian-desktop-common_251126.4_all.deb
+Size: 1960
+SHA256: 6d48cfc74b78da47cc315cb7b73334169e1c08f84657377b56353beb11ae49d1
+SHA1: 93f6619e3ba77a458d9f6971521ea2b78394acb3
+MD5sum: 7a8b50595ad76c040d8aa449f0f4eb4d
+Description: Install packages common to all Armbian Desktop installations
+
+Package: armbian-desktop-generic
+Source: armbian-meta
+Version: 251126.4
+Architecture: all
+Maintainer: Armbian Community <info@armbian.com>
+Installed-Size: 12
+Depends: armbian-desktop-common, lightdm
+Conflicts: armbian-desktop
+Breaks: armbian-desktop
+Provides: armbian-desktop
+Priority: optional
+Section: metapackages
+Filename: pool/main/a/armbian-meta/armbian-desktop-generic_251126.4_all.deb
+Size: 1280
+SHA256: 9c7781827d681b021b218f2203e76889457e940e79e07841566572ff34ec551e
+SHA1: 5ab3411f45783a0fcbe925359f2637f98560d26b
+MD5sum: 8ea8a3db2a76d697c796670c57a9e4b8
+Description: Install generic Armbian DE
+
+Package: armbian-desktop-gnome
+Source: armbian-meta
+Version: 251126.4
+Architecture: all
+Maintainer: Armbian Community <info@armbian.com>
+Installed-Size: 11
+Depends: armbian-desktop-common
+Recommends: gdm3, gnome-control-center, gnome-desktop3-data, gnome-disk-utility, gnome-keyring, gnome-menus, gnome-packagekit, gnome-screenshot, gnome-session, gnome-shell, gnome-shell-extension-appindicator, gnome-system-monitor, gnome-terminal, gvfs-backends, nautilus, nautilus-extension-gnome-terminal | nautilus (>= 1:49.0), ubuntu-desktop-minimal, xwayland
+Suggests: pavucontrol, pulseaudio, pulseaudio-module-bluetooth, software-properties-gtk, synaptic
+Conflicts: armbian-desktop
+Breaks: armbian-desktop
+Replaces: gdm3
+Provides: armbian-desktop
+Priority: optional
+Section: metapackages
+Filename: pool/main/a/armbian-meta/armbian-desktop-gnome_251126.4_all.deb
+Size: 1472
+SHA256: 980258701037fa6e943e0b3bd6660bfe7832d6c2cb42cfb091daf7cd6ee08e85
+SHA1: 2f6a3365bcb1dc7d04ae6ed588bd148677283fd7
+MD5sum: e58af0dd5130fd271d7b78a8415d71bb
+Description: Install Armbian GNOME DE
+
+Package: armbian-desktop-kde
+Source: armbian-meta
+Version: 251126.4
+Architecture: all
+Maintainer: Armbian Community <info@armbian.com>
+Installed-Size: 11
+Depends: armbian-desktop-common
+Recommends: thunar
+Conflicts: armbian-desktop
+Breaks: armbian-desktop
+Provides: armbian-desktop
+Priority: optional
+Section: metapackages
+Filename: pool/main/a/armbian-meta/armbian-desktop-kde_251126.4_all.deb
+Size: 1236
+SHA256: 320800264012a3d044dc7034af7424b8313bcf3f403785b0ac10f26deedc34bc
+SHA1: 4879f76a5827c5a5e13b9cc8f591f775002c7429
+MD5sum: ddca0463d515928dd9609622780aa404
+Description: Install Armbian KDE DE
+
+Package: armbian-desktop-xfce
+Source: armbian-meta
+Version: 251126.4
+Architecture: all
+Maintainer: Armbian Community <info@armbian.com>
+Installed-Size: 7
+Depends: armbian-desktop-common, xfce4
+Recommends: xfce4-notifyd, xfce4-power-manager, xfce4-screenshooter, xfce4-terminal
+Conflicts: armbian-desktop
+Breaks: armbian-desktop
+Provides: armbian-desktop
+Priority: optional
+Section: metapackages
+Filename: pool/main/a/armbian-meta/armbian-desktop-xfce_251126.4_all.deb
+Size: 1152
+SHA256: ed70f3525e29603456942bd53d30f504aa3a38a1ef4fbcbbde63d1f07262e0e8
+SHA1: 5782f2179cf14349e32b5258566c7cad1548e7fd
+MD5sum: 4fdaadea1cfcb50644bb41675f538b17
+Description: Install Armbian XFCE DE
+
