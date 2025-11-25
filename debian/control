@@ -76,7 +76,7 @@ Recommends:
  gnome-terminal,
  gvfs-backends,
  nautilus,
- nautilus-extension-gnome-terminal,
+ nautilus-extension-gnome-terminal|nautilus (>= 1:49.0),
  ubuntu-desktop-minimal,
  xwayland
 Suggests:
