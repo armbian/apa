@@ -162,7 +162,6 @@ Depends:
  armbian-desktop-common,
  ${misc:Depends},
  kde-plasma-desktop
-Recommends: thunar
 
 #############################################################################
 
