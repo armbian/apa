@@ -25,7 +25,8 @@ Depends:
  linux-image,
  linux-base,
  nano|vim,
- netplan.io|network-manager, #FIXME: networkd?
+ #FIXME: networkd?
+ netplan.io|network-manager,
  openssh-server,
  pastebinit,
  ${misc:Depends},
