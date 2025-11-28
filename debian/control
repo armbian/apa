@@ -18,12 +18,24 @@ Essential: yes
 Architecture: all
 Depends:
  armbian-bsp|armbian-bsp-cli,
+ e2fsprogs,
+ initramfs-tools,
+ iproute2,
+ logrotate,
  linux-image,
+ linux-base,
  nano|vim,
+ #FIXME: networkd?
  netplan.io|network-manager,
  openssh-server,
  pastebinit,
- ${misc:Depends}
+ ${misc:Depends},
+ apt-utils,
+ locales,
+ console-setup,
+ gnupg2,
+ ca-certificates,
+ tzdata
 Recommends:
  anacron,
  avahi-browse,
@@ -33,8 +45,9 @@ Recommends:
  pciutils,
  squid-deb-proxy-client|auto-apt-proxy
 Suggests:
- armbian-desktop,
+ armbian-desktop|armbian-cli,
  docker.io|docker-ce|podman
+
 
 #############################################################################
 
@@ -45,6 +58,56 @@ Essential: yes
 Architecture: any
 Depends:
  ${misc:Depends}
+
+#############################################################################
+
+Package: armbian-cli
+Description: basic commandline environment
+Priority: optional
+Essential: no
+Architecture: all
+# copied from armbian/build cli/common/main/packages, some items moved up to armbian-common
+Depends:
+ armbian-common,
+ bash-completion,
+ bc,
+ cron,
+ curl,
+ dbus-user-session,
+ dialog,
+ debconf-utils,
+ debsums,
+ fake-hwclock,
+ figlet,
+ htop,
+ iputils-ping,
+ init,
+ iw,
+ jq,
+ less,
+ lsof,
+ man-db,
+ mmc-utils,
+ ncurses-term,
+ parted,
+ psmisc,
+ rsync,
+ rsyslog,
+ sudo,
+ toilet,
+ u-boot-tools,
+ usbutils,
+ wget
+Recommends:
+# allow these to be uninstalled on systems that don't need/want them.
+ alsa-utils,
+ btrfs-progs,
+ dosfstools,
+ fdisk,
+ systemd-resolved,
+ wireguard-tools,
+ wireless-regdb,
+ wpasupplicant
 
 #############################################################################
 
@@ -95,8 +158,10 @@ Architecture: all
 Provides: armbian-desktop
 Breaks: armbian-desktop
 Conflicts: armbian-desktop
-Depends: armbian-desktop-common, ${misc:Depends}
-Recommends: thunar
+Depends:
+ armbian-desktop-common,
+ ${misc:Depends},
+ kde-plasma-desktop
 
 #############################################################################
 
@@ -158,6 +223,7 @@ Replaces:
  armbian-noble-desktop-kde-neon,
  armbian-noble-desktop-xfce
 Depends:
+ armbian-common,
  evince|thunderbird|trojita|sylpheed,
  terminator|konsole|gnome-terminal|xfce-terminal|xterm|termonad,
  xdg-user-dirs-gtk,
