@@ -20,6 +20,7 @@ Depends:
  e2fsprogs,
  initramfs-tools,
  iproute2,
+ iputils-ping,
  logrotate,
  linux-base,
  nano|vim,
