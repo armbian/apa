@@ -96,7 +96,10 @@ Architecture: all
 Provides: armbian-desktop
 Breaks: armbian-desktop
 Conflicts: armbian-desktop
-Depends: armbian-desktop-common, ${misc:Depends}
+Depends:
+ armbian-desktop-common,
+ kde-plasma-desktop,
+ ${misc:Depends}
 Recommends: thunar
 
 #############################################################################
