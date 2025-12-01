@@ -159,6 +159,7 @@ Replaces:
  armbian-noble-desktop-kde-neon,
  armbian-noble-desktop-xfce
 Depends:
+ armbian-common,
  evince|thunderbird|trojita|sylpheed,
  terminator|konsole|gnome-terminal|xfce-terminal|xterm|termonad,
  xdg-user-dirs-gtk,
