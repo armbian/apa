@@ -31,7 +31,8 @@ Recommends:
  gpg,
  polkitd|policykit-1|pkexec,
  pciutils,
- squid-deb-proxy-client|auto-apt-proxy
+ squid-deb-proxy-client|auto-apt-proxy,
+ sudo
 Suggests:
  armbian-desktop,
  docker.io|docker-ce|podman
