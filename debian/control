@@ -18,7 +18,6 @@ Essential: yes
 Architecture: all
 Depends:
  armbian-bsp|armbian-bsp-cli,
- linux-image,
  nano|vim,
  netplan.io|network-manager,
  openssh-server,
@@ -45,6 +44,7 @@ Priority: required
 Essential: yes
 Architecture: any
 Depends:
+ linux-image,
  ${misc:Depends}
 
 #############################################################################
