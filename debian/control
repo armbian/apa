@@ -38,7 +38,7 @@ Depends:
 Recommends:
  anacron,
  alsa-utils,
- avahi-browse,
+ avahi-utils,
  bash-completion,
  bc,
  btrfs-progs,
