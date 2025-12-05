@@ -22,7 +22,6 @@ Depends:
  initramfs-tools,
  iproute2,
  logrotate,
- linux-image,
  linux-base,
  nano|vim,
  netplan.io|network-manager,
