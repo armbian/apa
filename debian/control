@@ -22,6 +22,7 @@ Depends:
  netplan.io|network-manager,
  openssh-server,
  pastebinit,
+ libcap2-bin,
  ${misc:Depends}
 Recommends:
  anacron,
