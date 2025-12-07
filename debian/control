@@ -25,7 +25,7 @@ Depends:
  ${misc:Depends}
 Recommends:
  anacron,
- avahi-browse,
+ avahi-utils,
  fastfetch|neofetch,
  gpg,
  polkitd|policykit-1|pkexec,
