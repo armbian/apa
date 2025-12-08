@@ -17,7 +17,6 @@ Priority: required
 Essential: yes
 Architecture: all
 Depends:
- armbian-bsp|armbian-bsp-cli,
  nano|vim,
  netplan.io|network-manager,
  openssh-server,
@@ -33,6 +32,7 @@ Recommends:
  squid-deb-proxy-client|auto-apt-proxy,
  sudo
 Suggests:
+ armbian-bsp|armbian-bsp-cli,
  armbian-desktop,
  docker.io|docker-ce|podman
 
