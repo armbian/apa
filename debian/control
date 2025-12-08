@@ -89,6 +89,34 @@ Suggests:
 
 #############################################################################
 
+Package: armbian-desktop-cinnamon
+Description: Install Armbian Cinnamon DE
+Priority: optional
+Architecture: all
+Provides: armbian-desktop
+Breaks: armbian-desktop
+Conflicts: armbian-desktop
+Depends:
+ armbian-desktop-common,
+ ubuntucinnamon-desktop-minimal|cinnamon-core,
+ ${misc:Depends}
+
+#############################################################################
+
+Package: armbian-desktop-i3-wm
+Description: Install Armbian I3 tiling DE
+Priority: optional
+Architecture: all
+Provides: armbian-desktop
+Breaks: armbian-desktop
+Conflicts: armbian-desktop
+Depends:
+ armbian-desktop-common,
+ i3-wm,
+ ${misc:Depends}
+
+#############################################################################
+
 Package: armbian-desktop-kde
 Description: Install Armbian KDE DE
 Priority: optional
