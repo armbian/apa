@@ -25,6 +25,7 @@ Depends:
  iproute2,
  logrotate,
  linux-base,
+ libpam-systemd,
  nano|vim,
  netplan.io|network-manager,
  openssh-server,
