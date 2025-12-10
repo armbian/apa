@@ -15,9 +15,8 @@ Description:
  start an SSH daemon for access
 Priority: required
 Essential: yes
-Architecture: all
+Architecture: all   
 Depends:
- armbian-bsp|armbian-bsp-cli,
  apt-utils,
  ca-certificates,
  console-setup,
@@ -78,6 +77,7 @@ Recommends:
  wireless-regdb,
  wpasupplicant
 Suggests:
+ armbian-bsp|armbian-bsp-cli,
  armbian-desktop,
  docker.io|docker-ce|podman
 
