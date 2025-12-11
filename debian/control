@@ -31,6 +31,7 @@ Depends:
  pastebinit,
  locales,
  gnupg2,
+ sudo,
  tzdata,
  ${misc:Depends}
 Recommends:
@@ -67,7 +68,6 @@ Recommends:
  rsync,
  rsyslog,
  squid-deb-proxy-client|auto-apt-proxy,
- sudo,
  systemd-resolved,
  toilet,
  u-boot-tools,
